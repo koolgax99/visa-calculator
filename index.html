@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Colorlib Templates" />
+    <meta name="author" content="Colorlib" />
+    <meta name="keywords" content="Colorlib Templates" />
+
+    <!-- Title Page-->
+    <title>Visa Calculator</title>
+
+    <!-- Icons font CSS-->
+    <link
+      href="vendor/mdi-font/css/material-design-iconic-font.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="vendor/font-awesome-4.7/css/font-awesome.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <!-- Font special for pages-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all" />
+    <link
+      href="vendor/datepicker/daterangepicker.css"
+      rel="stylesheet"
+      media="all"
+    />
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all" />
+  </head>
+
+  <body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+      <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+          <div class="card-heading">
+            <h2 class="title">Visa Calculator</h2>
+          </div>
+          <div class="card-body">
+            <form onsubmit="calculateVisa()">
+              <div class="form-row m-b-55">
+                <div class="name">Name</div>
+                <div class="value">
+                  <div class="row row-space">
+                    <div class="col-2">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-5"
+                          type="text"
+                          name="first_name"
+                        />
+                        <label class="label--desc">first name</label>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-5"
+                          type="text"
+                          name="last_name"
+                        />
+                        <label class="label--desc">last name</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="name">Age:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="age" id="age">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="4">20-25 Years</option>
+                        <option value="6">26-30 Years</option>
+                        <option value="8">31-35 Years</option>
+                        <option value="10">36-50 Years</option>
+                        <option value="13">51+ Years</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Marital Status:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="maritalStatus" id="maritalStatus">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="8">Married</option>
+                        <option value="4">Unmarried</option>
+                        <option value="2">Divorced</option>
+                        <option value="0">Other</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Travel History:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="travelHistory" id="travelHistory">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="0">No Countries</option>
+                        <option value="4">1 Country</option>
+                        <option value="6">2 Countries</option>
+                        <option value="8">3 or More Countries</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Purpose Of Visit:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="purposeOfVisit" id="purposeOfVisit">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="8">Vacations</option>
+                        <option value="6">
+                          To visit someone (Blood Relation)
+                        </option>
+                        <option value="2">
+                          To visit someone (Far Relative)
+                        </option>
+                        <option value="1">TO visit someone (Friend)</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Annual Income:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="annualIncome" id="annualIncome">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="3">1 to 2 Lakhs</option>
+                        <option value="5">3 to 5 Lakhs</option>
+                        <option value="6">6 to 10 Lakhs</option>
+                        <option value="7">11 or More</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Occupation:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="occupation" id="occupation">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="10">
+                          MNC Employee / Salary in Acc.
+                        </option>
+                        <option value="10">
+                          Govt. Employee / Salary in Acc.
+                        </option>
+                        <option value="6">
+                          Pvt. Employee / Salary in Acc.
+                        </option>
+                        <option value="8">Regd. Business Owner</option>
+                        <option value="4">Professional</option>
+                        <option value="0">Unemployed</option>
+                        <option value="4">Pvt. Employess / Cash Salary</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Bank Savings:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="bankSavings" id="bankSavings">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="4">1 to 3 Lakhs</option>
+                        <option value="6">4 to 7 Lakhs</option>
+                        <option value="8">8 Lakhs or more</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Fixed Deposits in Bank:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="fixedDeposits" id="fixedDeposits">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="3">50 K to 1 Lakh</option>
+                        <option value="5">101 K to 3 Lakhs</option>
+                        <option value="7">301 K to 5 Lakhs</option>
+                        <option value="8">More than 5 Lakhs</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Residential Property Valuation:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="resdentialProperty" id="resdentialProperty">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="3">10 Lakhs to 15 Lakhs</option>
+                        <option value="5">16 Lakhs to 25 Lakhs</option>
+                        <option value="7">26 Lakhs to 30 Lakhs</option>
+                        <option value="9">31 Lakhs to 35 Lakhs</option>
+                        <option value="10">More than 35 Lakhs</option>
+                        <option value="0">No</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Agricultural Land Valuation:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="agriLand" id="agriLand">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="5">10 Lakhs to 20 Lakhs</option>
+                        <option value="7">21 Lakhs to 40 Lakhs</option>
+                        <option value="9">41 Lakhs to 60 Lakhs</option>
+                        <option value="10">More than 60 Lakhs</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Travelling With:</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="travelWith" id="travelWith">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="0">Alone</option>
+                        <option value="7">With Friends</option>
+                        <option value="7">
+                          With Spouse (Wihtout Children)
+                        </option>
+                        <option value="2">With Spouse (With Children)</option>
+                        <option value="8">Group Tour</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Travel Itinerary</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="travelItinerary" id="travelItinerary">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="0">No</option>
+                        <option value="5">Yes (Unpaid)</option>
+                        <option value="25">Yes (Partially Paid)</option>
+                        <option value="35">Yes (Fully Paid)</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">Passport</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="passport" id="passport">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="1">ECR</option>
+                        <option value="3">Non ECR</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="name">IPC Registered Case</div>
+                <div class="value">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="ipcCases" id="ipcCases">
+                        <option disabled="disabled" selected="selected">
+                          Choose option
+                        </option>
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button class="btn btn--radius-2 btn--red" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+  </body>
+  <script>
+    function calculateVisa() {
+      var age = document.getElementById("age").value;
+      var maritalStatus = document.getElementById("maritalStatus").value;
+      var travelHistory = document.getElementById("travelHistory").value;
+      var purposeOfVisit = document.getElementById("purposeOfVisit").value;
+      var annualIncome = document.getElementById("annualIncome").value;
+      var occupation = document.getElementById("occupation").value;
+      var bankSavings = document.getElementById("bankSavings").value;
+      var fixedDeposits = document.getElementById("fixedDeposits").value;
+      var resdentialProperty =
+        document.getElementById("resdentialProperty").value;
+      var agriLand = document.getElementById("agriLand").value;
+      var travelWith = document.getElementById("travelWith").value;
+      var travelItinerary = document.getElementById("travelItinerary").value;
+      var passport = document.getElementById("passport").value;
+      var ipcCases = document.getElementById("ipcCases").value;
+
+      total =
+        parseInt(age) +
+        parseInt(maritalStatus) +
+        parseInt(travelHistory) +
+        parseInt(purposeOfVisit) +
+        parseInt(annualIncome) +
+        parseInt(occupation) +
+        parseInt(bankSavings) +
+        parseInt(fixedDeposits) +
+        parseInt(resdentialProperty) +
+        parseInt(agriLand) +
+        parseInt(travelWith) +
+        parseInt(travelItinerary) +
+        parseInt(passport) +
+        parseInt(ipcCases);
+
+      alert(total);
+    }
+  </script>
+</html>
+<!-- end document-->
